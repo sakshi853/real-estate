@@ -1,354 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Balaji Evara — Premium 1 & 2 BHK | New Panvel</title>
-    <meta
-      name="description"
-      content="Balaji Evara — Premium 1 & 2 BHK Homes in New Panvel. Contact for Site Visit Today."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Balaji Evara - Premium 2 & 3 BHK flats in New Panvel. Book your dream home today!" />
+  <title>Balaji Evara | New Panvel</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <li><a href="login.html">Login</a></li>
-    <li><a href="signup.html">signup</a></li>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-    <style>
-      :root {
-        --royal: #0033a0;
-        --yellow: #ffd600;
-        --white: #fff;
-        --black: #1e1e1e;
-        --muted: #6b7280;
-        --accent-green: #25d366;
-        --call-blue: #0074d9;
-        --radius: 16px;
-        --shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-      }
+    body {
+      background-color: #f4f6fc;
+      color: #333;
+    }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", system-ui, sans-serif;
-      }
+    /* Navbar */
+    header {
+      background: #0033a0;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-      body {
-        background: var(--white);
-        color: var(--black);
-        line-height: 1.6;
-      }
+    header img {
+      height: 40px;
+    }
 
+    nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      background: #ffd700;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .auth-buttons button:hover {
+      background: white;
+      color: #0033a0;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero.jpeg') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1rem;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      background: #ffd700;
+      color: #0033a0;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background: white;
+    }
+
+    /* Login/Signup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      color: #0033a0;
+      margin-bottom: 20px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .modal-content button {
+      background-color: #0033a0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+    }
+
+    .modal-content button:hover {
+      background-color: #ffd700;
+      color: #0033a0;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
       header {
-        background: var(--royal);
-        color: var(--white);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: var(--shadow);
-      }
-
-      .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 20px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .brand img {
-        height: 44px;
-        border-radius: 8px;
-      }
-
-      .title {
-        font-weight: 900;
-        font-size: 22px;
-        color: var(--yellow);
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 16px;
-      }
-
-      nav a {
-        color: var(--white);
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-      nav a:hover {
-        color: var(--yellow);
-      }
-
-      /* Mobile Menu */
-      .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--yellow);
-        font-size: 26px;
-      }
-
-      @media (max-width: 768px) {
-        nav ul {
-          display: none;
-          flex-direction: column;
-          background: var(--royal);
-          position: absolute;
-          top: 64px;
-          right: 0;
-          width: 100%;
-          padding: 10px 0;
-          text-align: center;
-        }
-        nav ul.show {
-          display: flex;
-        }
-        .menu-toggle {
-          display: block;
-        }
-      }
-
-      /* Hero */
-      .hero {
+        flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
-        background: linear-gradient(180deg, var(--yellow) 0%, var(--white) 100%);
       }
 
       .hero h1 {
-        color: var(--royal);
-        font-size: 28px;
-        font-weight: 900;
-        margin-bottom: 10px;
+        font-size: 1.5rem;
       }
 
-      .hero h2 {
-        font-size: 18px;
-        color: var(--black);
-        margin-bottom: 16px;
+      .hero button {
+        font-size: 0.9rem;
       }
+    }
+  </style>
+</head>
 
-      .pill-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        margin-bottom: 16px;
-      }
-
-      .pill {
-        background: var(--white);
-        border: 2px solid var(--royal);
-        padding: 8px 14px;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 14px;
-        color: var(--royal);
-      }
-
-      .hero img {
-        width: 100%;
-        border-radius: var(--radius);
-        margin-top: 16px;
-        box-shadow: var(--shadow);
-      }
-
-      /* Features */
-      section.card {
-        background: var(--white);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 20px;
-        margin: 20px;
-      }
-
-      .card h3 {
-        color: var(--royal);
-        margin-bottom: 12px;
-        font-size: 22px;
-      }
-
-      .grid {
-        display: grid;
-        gap: 12px;
-      }
-
-      .feature {
-        border: 2px solid var(--yellow);
-        border-radius: 12px;
-        padding: 14px;
-        text-align: center;
-        transition: all 0.3s;
-      }
-
-      .feature:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 20px rgba(255, 214, 0, 0.3);
-      }
-
-      .feature h3 {
-        color: var(--royal);
-        margin-bottom: 6px;
-      }
-
-      /* Floating Buttons */
-      .floating-contact {
-        position: fixed;
-        right: 16px;
-        bottom: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        z-index: 999;
-      }
-
-      .floating-contact a {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 26px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        transition: transform 0.2s;
-      }
-
-      .floating-contact a:hover {
-        transform: scale(1.1);
-      }
-
-      .wa {
-        background: var(--accent-green);
-      }
-
-      .call {
-        background: var(--call-blue);
-      }
-
-      footer {
-        background: var(--royal);
-        color: var(--white);
-        text-align: center;
-        padding: 14px;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <div class="nav">
-        <div class="brand">
-          <img src="visheshlogo.jpeg" alt="Vishesh Group Logo" />
-          <div>
-            <div class="title">BALAJI EVARA</div>
-            <div style="font-size: 13px;">New Panvel</div>
-          </div>
-        </div>
-        <button class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-        <nav>
-          <ul id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#highlights">Highlights</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero" id="home">
-        <h1>G+11 Storey • 1 & 2 BHK • ₹48L Onwards</h1>
-        <h2>Premium residences in New Panvel designed for comfort & connectivity</h2>
-        <div class="pill-row">
-          <div class="pill">🛫 Near Navi Mumbai Airport</div>
-          <div class="pill">🚗 Close to Highways</div>
-          <div class="pill">🚉 5 Min from Station</div>
-        </div>
-        <img src="hero.jpeg" alt="Balaji Evara Project" />
-      </section>
-
-      <section id="highlights" class="card">
-        <h3>Highlights</h3>
-        <div class="grid">
-          <div class="feature">
-            <h3>Smart Layouts</h3>
-            <p>Every square foot is optimized for functionality and comfort.</p>
-          </div>
-          <div class="feature">
-            <h3>Quality Construction</h3>
-            <p>Built with branded materials and a strong structural foundation.</p>
-          </div>
-          <div class="feature">
-            <h3>Lifestyle Amenities</h3>
-            <p>Landscaped spaces, play areas, and secure lobbies.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="amenities" class="card">
-        <h3>Amenities</h3>
-        <div class="grid">
-          <div class="feature"><h3>Clubhouse</h3><p>Leisure and celebration space for all residents.</p></div>
-          <div class="feature"><h3>Garden</h3><p>Peaceful green areas for relaxation.</p></div>
-          <div class="feature"><h3>Play Area</h3><p>Safe environment for children to play freely.</p></div>
-        </div>
-      </section>
-
-      <section id="location" class="card">
-        <h3>Location</h3>
-        <p>
-          Strategically located in New Panvel, with easy access to highways, railway station, and the upcoming Navi Mumbai International Airport.
-        </p>
-      </section>
-    </main>
-
-    <!-- Floating Buttons -->
-    <div class="floating-contact">
-      <a
-        href="https://wa.me/9322122555"
-        target="_blank"
-        rel="noopener nofollow"
-        class="wa"
-        aria-label="Chat on WhatsApp"
-      >
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="tel:9322122555" class="call" aria-label="Call Now">
-        <i class="fas fa-phone"></i>
-      </a>
+<body>
+  <header>
+    <img src="visheshlogo.jpeg" alt="Vishesh Logo" />
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Highlights</a>
+      <a href="#">Amenities</a>
+      <a href="#">Location</a>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="openModal('loginModal')">Login</button>
+      <button onclick="openModal('signupModal')">Sign Up</button>
     </div>
+  </header>
 
-    <footer>© 2025 Balaji Evara | Vishesh Group</footer>
+  <section class="hero">
+    <h1>Welcome to Balaji Evara</h1>
+    <p>Luxury 2 & 3 BHK Flats in the heart of New Panvel by Vishesh Group. 
+       Experience modern living, open spaces, and top-class amenities.</p>
+    <button>Book a Visit</button>
+  </section>
 
-    <script>
-      // Mobile Menu Toggle
-      const toggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-      toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button>Login</button>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button>Sign Up</button>
+    </div>
+  </div>
+
+  <footer style="text-align:center; padding:16px; background:#0033a0; color:white;">
+    © 2025 Balaji Evara | Developed by Vishesh Group
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Close modal when clicking outside it
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(m => {
+        if (event.target === m) m.style.display = 'none';
       });
-    </script>
-  </body>
+    }
+  </script>
+</body>
 </html>
-
