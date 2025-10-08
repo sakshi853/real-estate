@@ -6,249 +6,197 @@
   <meta name="description" content="Balaji Evara - Premium 2 & 3 BHK flats in New Panvel. Book your dream home today!" />
   <title>Balaji Evara | New Panvel</title>
 
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: #f4f6fc;
+      background: #f4f6fc;
       color: #333;
+      overflow-x: hidden;
     }
 
     /* Navbar */
     header {
       background: #0033a0;
       color: white;
-      padding: 12px 20px;
+      padding: 15px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     header img {
-      height: 40px;
+      height: 45px;
+      border-radius: 5px;
     }
 
     nav {
       display: flex;
-      gap: 16px;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
       color: #ffd700;
     }
 
+    /* Auth Buttons */
     .auth-buttons {
       display: flex;
-      gap: 10px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .auth-buttons button {
-      background: #ffd700;
+      background: linear-gradient(90deg, #ffd700, #ffb400);
       border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
+      padding: 8px 16px;
+      border-radius: 25px;
       font-weight: 600;
       cursor: pointer;
+      color: #0033a0;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     }
 
     .auth-buttons button:hover {
       background: white;
       color: #0033a0;
+      transform: scale(1.05);
     }
 
     /* Hero Section */
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero.jpeg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('hero.jpeg') center/cover no-repeat;
       color: white;
+      text-align: center;
+      padding: 100px 20px;
     }
 
     .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease;
     }
 
     .hero p {
       max-width: 600px;
-      font-size: 1rem;
+      margin: 0 auto;
+      line-height: 1.6;
+      animation: fadeInUp 1.2s ease;
     }
 
     .hero button {
-      margin-top: 20px;
+      margin-top: 25px;
       background: #ffd700;
-      color: #0033a0;
       border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
+      color: #0033a0;
+      padding: 12px 24px;
       font-size: 1rem;
+      border-radius: 30px;
       cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .hero button:hover {
       background: white;
+      transform: scale(1.05);
     }
 
-    /* Login/Signup Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
+    /* Footer */
+    footer {
       text-align: center;
-      position: relative;
-    }
-
-    .modal-content h2 {
-      color: #0033a0;
-      margin-bottom: 20px;
-    }
-
-    .modal-content input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .modal-content button {
-      background-color: #0033a0;
+      padding: 20px;
+      background: #0033a0;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 40px;
     }
 
-    .modal-content button:hover {
-      background-color: #ffd700;
-      color: #0033a0;
-    }
-
-    .close {
-      position: absolute;
-      right: 15px;
-      top: 10px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
+    /* Mobile Responsive */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
+        gap: 10px;
         text-align: center;
       }
 
       .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
-      .hero button {
+      .auth-buttons button {
+        padding: 6px 14px;
         font-size: 0.9rem;
       }
     }
   </style>
 </head>
-
 <body>
+
+  <!-- Header -->
   <header>
     <img src="visheshlogo.jpeg" alt="Vishesh Logo" />
     <nav>
       <a href="#">Home</a>
       <a href="#">Highlights</a>
       <a href="#">Amenities</a>
-      <a href="#">Location</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
     </nav>
     <div class="auth-buttons">
-      <button onclick="openModal('loginModal')">Login</button>
-      <button onclick="openModal('signupModal')">Sign Up</button>
+      <button onclick="location.href='login.html'"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+      <button onclick="location.href='signup.html'"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Welcome to Balaji Evara</h1>
-    <p>Luxury 2 & 3 BHK Flats in the heart of New Panvel by Vishesh Group. 
-       Experience modern living, open spaces, and top-class amenities.</p>
-    <button>Book a Visit</button>
+    <p>Discover elegant 2 & 3 BHK residences in New Panvel. 
+       Modern architecture, serene views, and premium amenities designed for your lifestyle.</p>
+    <button>Book Your Dream Home</button>
   </section>
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('loginModal')">&times;</span>
-      <h2>Login</h2>
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button>Login</button>
-    </div>
-  </div>
-
-  <!-- Signup Modal -->
-  <div id="signupModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('signupModal')">&times;</span>
-      <h2>Sign Up</h2>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button>Sign Up</button>
-    </div>
-  </div>
-
-  <footer style="text-align:center; padding:16px; background:#0033a0; color:white;">
+  <!-- Footer -->
+  <footer>
     © 2025 Balaji Evara | Developed by Vishesh Group
   </footer>
 
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'block';
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-
-    // Close modal when clicking outside it
-    window.onclick = function(event) {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(m => {
-        if (event.target === m) m.style.display = 'none';
-      });
-    }
-  </script>
 </body>
 </html>
